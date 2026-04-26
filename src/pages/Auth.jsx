@@ -60,23 +60,7 @@ const Auth = () => {
   };
 
   const handleGoogleLogin = async () => {
-    try {
-      setLoading(true);
-      setError("");
-      const { error } = await supabase.auth.signInWithOAuth({
-        provider: 'google',
-        options: {
-          redirectTo: `${window.location.origin}/chat`,
-          queryParams: {
-            prompt: 'select_account'
-          }
-        }
-      });
-      if (error) throw error;
-    } catch (err) {
-      setError("Google Login Failed: " + err.message);
-      setLoading(false);
-    }
+    setError("Google Login is currently being migrated. Please use Email for now.");
   };
 
   return (
